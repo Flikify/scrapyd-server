@@ -1,8 +1,11 @@
 #!/bin/bash
 
-rm -rf /app/*
+DIR_PATH="/app"
 
-mv /apptemp/* /app
+if [ ! -d "$DIR_PATH" ] || [ ! "$(ls -A $DIR_PATH)" ]; then
+    echo "File missing, initializing..."
+    mv /apptemp/* /app
+fi
 
 CONFIG_FILE="/app/scrapyd.conf"
 

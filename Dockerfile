@@ -3,7 +3,7 @@ FROM debian:bullseye-slim
 ENV SCRAPYDWEB_USERNAME=admin
 ENV SCRAPYDWEB_PASSWORD=password
 
-RUN mkdir -p /app /apptemp
+RUN mkdir -p /app /apptemp/scrapyd/eggs /apptemp/scrapyd/logs /apptemp/scrapyd/items /apptemp/scrapyd/dbs
 
 WORKDIR /app
 

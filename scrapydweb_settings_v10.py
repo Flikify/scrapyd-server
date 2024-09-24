@@ -262,7 +262,7 @@ SMTP_CONNECTION_TIMEOUT = 30
 
 ############################## Monitor & Alert ################################
 # The default is False, set it to True to launch the poll subprocess to monitor your crawling jobs.
-ENABLE_MONITOR = True
+ENABLE_MONITOR = False
 
 ########## poll interval ##########
 # Tip: In order to be notified (and stop or forcestop a job when triggered) in time,

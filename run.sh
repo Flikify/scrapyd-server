@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf /app/*
+
 mv /apptemp/* /app
 
 CONFIG_FILE="/app/scrapyd.conf"

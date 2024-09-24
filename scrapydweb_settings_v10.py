@@ -70,6 +70,7 @@ LOCAL_SCRAPYD_SERVER = ''
 # Check out https://scrapyd.readthedocs.io/en/stable/config.html#logs-dir for more info.
 # e.g. 'C:/Users/username/logs' or '/home/username/logs'
 LOCAL_SCRAPYD_LOGS_DIR = '/app/scrapyd/logs'
+SCRAPYD_LOGS_DIR = '/app/scrapyd/logs'
 
 # The default is False, set it to True to automatically run LogParser as a subprocess at startup.
 # Note that you can run the LogParser service separately via command 'logparser' as you like.
@@ -286,7 +287,7 @@ ENABLE_EMAIL_ALERT = False
 ########## alert working time ##########
 # Monday is 1 and Sunday is 7.
 # e.g, [1, 2, 3, 4, 5, 6, 7]
-ALERT_WORKING_DAYS = []
+ALERT_WORKING_DAYS = [1, 2, 3, 4, 5, 6, 7]
 
 # From 0 to 23.
 # e.g. [9] + list(range(15, 18)) >>> [9, 15, 16, 17], or range(24) for 24 hours

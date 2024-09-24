@@ -22,4 +22,6 @@ cd /app
 scrapyd &
 echo "Wait 5 seconds..."
 sleep 5
+logparser &
+sleep 5
 scrapydweb

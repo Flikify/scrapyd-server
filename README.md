@@ -1,6 +1,6 @@
 [中文版本](./README_CN.md)
 # scrapyd-server
-A docker image consisting of scrapyd and scrapydweb. If you only deploy on a single machine, it is your choice
+A docker image consisting of scrapyd and scrapydweb. If you only deploy on one machine, then it is your choice. It can easily and quickly run scrapyd and scrapydweb.
 
 ## How to use
 1. Using the one I have built

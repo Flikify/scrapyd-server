@@ -36,4 +36,4 @@ RUN chmod +x /usr/bin/run.sh
 
 EXPOSE 5000 6800
 
-CMD ["/usr/bin/run.sh"]
+ENTRYPOINT ["/usr/bin/run.sh"]

@@ -69,13 +69,13 @@ LOCAL_SCRAPYD_SERVER = ''
 # python -c "from os.path import abspath, isdir; from scrapyd.config import Config; path = abspath(Config().get('logs_dir')); print(path); print(isdir(path))"
 # Check out https://scrapyd.readthedocs.io/en/stable/config.html#logs-dir for more info.
 # e.g. 'C:/Users/username/logs' or '/home/username/logs'
-LOCAL_SCRAPYD_LOGS_DIR = ''
+LOCAL_SCRAPYD_LOGS_DIR = '/app/scrapyd/logs'
 
 # The default is False, set it to True to automatically run LogParser as a subprocess at startup.
 # Note that you can run the LogParser service separately via command 'logparser' as you like.
 # Run 'logparser -h' to find out the config file of LogParser for more advanced settings.
 # Visit https://github.com/my8100/logparser for more info.
-ENABLE_LOGPARSER = False
+ENABLE_LOGPARSER = True
 ############################## QUICK SETUP end ################################
 ############################## 快速设置 结束 ###################################
 

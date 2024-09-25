@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir scrapydweb scrapyd scrapy logparser
+RUN pip3 install --no-cache-dir scrapydweb scrapyd scrapy logparser scrapy-redis
 
 COPY scrapyd.conf /apptemp/scrapyd.conf
 

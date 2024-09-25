@@ -23,10 +23,9 @@ else
   echo "password=$PASSWORD" >> "$CONFIG_FILE"
 fi
 
-cd /app
-scrapyd &
-echo "Wait 30 seconds..."
-sleep 30
-logparser &
-sleep 5
-scrapydweb
+
+cd /app && scrapyd &
+echo "Wait 10 seconds..."
+sleep 10
+cd /app && logparser &
+cd /app && scrapydweb

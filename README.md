@@ -10,7 +10,7 @@ A docker image consisting of scrapyd and scrapydweb. If you only deploy on one m
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
   echo $DIR
   
-  docker run --name scrapy-server -itd -p 5001:5000 -p 6800:6800 \
+  docker run --restart=always --name scrapy-server -itd -p 5001:5000 -p 6800:6800 \
   -e SCRAPYDWEB_USERNAME=admin \
   -e SCRAPYDWEB_PASSWORD=password \
   -v $DIR/app/:/app \
@@ -19,7 +19,7 @@ A docker image consisting of scrapyd and scrapydweb. If you only deploy on one m
   ```
 2. Build it yourself And Run
   ```
-  docker build -t scrapy-server:latest .
+  docker build --restart=always -t scrapy-server:latest .
   docker run --name scrapy-server -itd -p 5000:5000 -p 6800:6800 \
   -e SCRAPYDWEB_USERNAME=admin \
   -e SCRAPYDWEB_PASSWORD=password \

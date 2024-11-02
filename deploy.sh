@@ -8,8 +8,8 @@ mkdir -p "$DIR/config" "$DIR/scrapyd"/{eggs,items,logs,dbs}
 docker run -d --name=test \
   -p 6800:6800 \
   -p 5000:5000 \
-  -e SCRAPYD_USERNAME=flik \
-  -e SCRAPYD_PASSWORD=flik1513. \
+  -e SCRAPYD_USERNAME=admin \
+  -e SCRAPYD_PASSWORD=password \
   -v "$DIR/config":/app/config \
   -v "$DIR/scrapyd":/app/scrapyd \
   scrapyd-scrapyweb

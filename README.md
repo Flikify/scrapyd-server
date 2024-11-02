@@ -11,9 +11,10 @@ A docker image consisting of scrapyd and scrapydweb. If you only deploy on one m
   echo $DIR
   
   docker run --restart=always --name scrapy-server -itd -p 5001:5000 -p 6800:6800 \
-  -e SCRAPYDWEB_USERNAME=admin \
-  -e SCRAPYDWEB_PASSWORD=password \
-  -v $DIR/app/:/app \
+  -e SCRAPYD_USERNAME=admin \
+  -e SCRAPYD_PASSWORD=password \
+  -v $DIR/config:/etc/config \
+  -v $DIR/scrapyd:/app/scrapyd \
   flik007/scrapyd-server:latest
   
   ```
@@ -21,8 +22,9 @@ A docker image consisting of scrapyd and scrapydweb. If you only deploy on one m
   ```
   docker build --restart=always -t scrapy-server:latest .
   docker run --name scrapy-server -itd -p 5000:5000 -p 6800:6800 \
-  -e SCRAPYDWEB_USERNAME=admin \
-  -e SCRAPYDWEB_PASSWORD=password \
-  -v $DIR/app/:/app \
+  -e SCRAPYD_USERNAME=admin \
+  -e SCRAPYD_PASSWORD=password \
+  -v $DIR/config:/etc/config \
+  -v $DIR/scrapyd:/app/scrapyd \
   scrapyd-server:latest
   ```

@@ -20,7 +20,7 @@ A docker image consisting of scrapyd and scrapydweb. If you only deploy on one m
   ```
 2. Build it yourself And Run
   ```
-  docker build --restart=always -t scrapy-server:latest .
+  docker build -t scrapy-server:latest .
   docker run --name scrapy-server -itd -p 5000:5000 -p 6800:6800 \
   -e SCRAPYD_USERNAME=admin \
   -e SCRAPYD_PASSWORD=password \

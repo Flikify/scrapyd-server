@@ -10,18 +10,20 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo $DIR
 
 docker run --restart=always --name scrapy-server -itd -p 5001:5000 -p 6800:6800 \
--e SCRAPYDWEB_USERNAME=admin \
--e SCRAPYDWEB_PASSWORD=password \
--v $DIR/app/:/app \
-flik007/scrapyd-server:latest
+  -e SCRAPYD_USERNAME=admin \
+  -e SCRAPYD_PASSWORD=password \
+  -v $DIR/config:/etc/config \
+  -v $DIR/scrapyd:/app/scrapyd \
+  flik007/scrapyd-server:latest
 
 ```
 2. 自己构建并运行
 ```
 docker build -t scrapy-server:latest .
 docker run --restart=always --name scrapy-server -itd -p 5000:5000 -p 6800:6800 \
--e SCRAPYDWEB_USERNAME=admin \
--e SCRAPYDWEB_PASSWORD=password \
--v $DIR/app/:/app \
-scrapyd-server:latest
+  -e SCRAPYD_USERNAME=admin \
+  -e SCRAPYD_PASSWORD=password \
+  -v $DIR/config:/etc/config \
+  -v $DIR/scrapyd:/app/scrapyd \
+  scrapyd-server:latest
 ```

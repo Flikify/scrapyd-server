@@ -22,6 +22,21 @@ check_port() {
     fi
 }
 
+# 定义函数 check_and_copy，接受两个参数：检查路径和复制路径
+check_and_copy() {
+    TARGET_FILE="$1"
+    SOURCE_FILE="$2"
+    
+    # 检查目标文件是否存在
+    if [ ! -f "$TARGET_FILE" ]; then
+        echo "$TARGET_FILE 不存在，正在复制..."
+        cp "$SOURCE_FILE" "$TARGET_FILE"
+        echo "文件复制完成。"
+    else
+        echo "$TARGET_FILE 已存在，无需复制。"
+    fi
+}
+
 # 检查服务就绪
 wait_for_service() {
     local host="$1"
@@ -43,18 +58,10 @@ wait_for_service() {
     echo "$service 已就绪!"
 }
 
-# 初始化配置
-init_config() {
-    # 如果挂载的配置目录为空，复制默认配置
-    if [ ! -f "/app/config/scrapyd.conf" ]; then
-        cp /app/config/scrapyd.conf.default /app/config/scrapyd.conf
-    fi
-    if [ ! -f "/app/config/scrapydweb_settings_v10.py" ]; then
-        cp /app/config/scrapydweb_settings_v10.py.default /app/config/scrapydweb_settings_v10.py
-    fi
-}
-
 mkdir /app/scrapyd/project
+
+check_and_copy "/app/config/scrapyd.conf" "/etc/app/config/scrapyd.conf"
+check_and_copy "/app/config/scrapydweb_settings_v10.py" "/etc/app/config/scrapydweb_settings_v10.py"
 
 # 检查并清理端口
 check_port 6800

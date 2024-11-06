@@ -58,8 +58,9 @@ wait_for_service() {
     echo "$service 已就绪!"
 }
 
-mkdir /app/scrapyd/project
-
+# 创建必要的目录结构
+mkdir -p /app/config /app/scrapyd/{eggs,items,logs,dbs,project}
+    
 check_and_copy "/app/config/scrapyd.conf" "/etc/app/config/scrapyd.conf"
 check_and_copy "/app/config/scrapydweb_settings_v10.py" "/etc/app/config/scrapydweb_settings_v10.py"
 

@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     netcat-traditional \
     lsof \
     procps \
+    telnet \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /etc/app/config

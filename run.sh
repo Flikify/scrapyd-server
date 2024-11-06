@@ -87,6 +87,8 @@ SCRAPYD_PID=$!
 # 等待 Scrapyd 启动
 wait_for_service "127.0.0.1" "6800" "Scrapyd"
 
+logparser &
+
 # 启动 ScrapyWeb
 scrapydweb &
 SCRAPYWEB_PID=$!

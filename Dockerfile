@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 ENV SCRAPYDWEB_USERNAME=admin
 ENV SCRAPYDWEB_PASSWORD=password

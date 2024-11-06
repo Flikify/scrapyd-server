@@ -14,10 +14,6 @@ RUN apt-get update && apt-get install -y \
     procps \
     && rm -rf /var/lib/apt/lists/*
 
-# 创建必要的目录结构
-RUN mkdir -p /app/config \
-    /app/scrapyd/{eggs,items,logs,dbs,project}
-
 RUN mkdir -p /etc/app/config
 
 # 安装依赖
